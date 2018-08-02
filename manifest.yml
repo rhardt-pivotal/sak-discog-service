@@ -1,0 +1,12 @@
+---
+applications:
+  - name: sak-discog-service
+    memory: 2G
+    route: discog-service
+    domain: apps.internal
+    health-check-type: process
+    path: ./target/sak-discog-service-0.0.1-SNAPSHOT.jar
+    services:
+    - mongo
+    env:
+      AUTH_APP_GUID: 39a12812-6505-4e76-bb1c-ef0b47439d29
